@@ -1,2 +1,2 @@
 # wcmf-workspace
-A wCMF development enviroment
+A development enviroment for wCMF projects
