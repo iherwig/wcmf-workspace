@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:Product
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    name="wcmf.eclipse"
+    label="wcmf eclipse">
+  <annotation
+      source="http://www.eclipse.org/oomph/setup/BrandingInfo">
+    <detail
+        key="folderName">
+      <value>eclipse</value>
+    </detail>
+    <detail
+        key="folderName.macosx">
+      <value>Eclipse</value>
+    </detail>
+  </annotation>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="User Preferences">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.papyrus.sdk.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.php.feature.group"/>
+    <requirement
+        name="org.eclipse.php.composer.feature.group"/>
+    <requirement
+        name="org.eclipse.php.importer.feature.group"/>
+  </setupTask>
+  <version name="neon"
+      label="Neon"
+      requiredJavaVersion="1.8">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="${scope.product.label} (${scope.product.version.label})">
+      <requirement
+          name="org.eclipse.platform.ide"/>
+      <requirement
+          name="org.eclipse.platform.feature.group"/>
+      <requirement
+          name="org.eclipse.rcp.feature.group"/>
+      <repository
+          url="http://download.eclipse.org/releases/neon"/>
+    </setupTask>
+    <description>wcmf eclipse for Neon.</description>
+  </version>
+  <description>wcmf eclipse provides an IDE for developing wcmf projects.</description>
+</setup:Product>
