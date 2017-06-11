@@ -6,16 +6,16 @@
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     name="wcmf.eclipse"
-    label="wcmf eclipse">
+    label="Eclipse IDE for wCMF Developers">
   <annotation
       source="http://www.eclipse.org/oomph/setup/BrandingInfo">
     <detail
         key="folderName">
-      <value>eclipse</value>
+      <value>eclipse-neon-wcmf</value>
     </detail>
     <detail
         key="folderName.macosx">
-      <value>Eclipse</value>
+      <value>Eclipse Neon wcmf</value>
     </detail>
   </annotation>
   <setupTask
@@ -35,7 +35,7 @@
     <requirement
         name="org.eclipse.php.importer.feature.group"/>
   </setupTask>
-  <version name="neon"
+  <version name="neon-wcmf"
       label="Neon"
       requiredJavaVersion="1.8">
     <setupTask
@@ -50,7 +50,7 @@
       <repository
           url="http://download.eclipse.org/releases/neon"/>
     </setupTask>
-    <description>wcmf eclipse for Neon.</description>
+    <description></description>
   </version>
-  <description>wcmf eclipse provides an IDE for developing wcmf projects.</description>
+  <description><![CDATA[An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.]]></description>
 </setup:Product>
