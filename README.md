@@ -1,2 +1,2 @@
 # wcmf-workspace
-A development enviroment for [wCMF](https://github.com/iherwig/wcmf) projects
+A development environment for [wCMF](https://github.com/iherwig/wcmf) projects
