@@ -11,29 +11,104 @@
       source="http://www.eclipse.org/oomph/setup/BrandingInfo">
     <detail
         key="folderName">
-      <value>eclipse-neon-wcmf</value>
+      <value>eclipse</value>
     </detail>
     <detail
         key="folderName.macosx">
-      <value>Eclipse Neon wcmf</value>
+      <value>Eclipse</value>
     </detail>
   </annotation>
   <setupTask
       xsi:type="setup:CompoundTask"
       name="User Preferences">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.core.resources">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/encoding"
+          value="UTF-8"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.core.resources/refresh.enabled"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.php.debug.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.php.debug.core/org.eclipse.php.debug.core.xdebug_remotesession"
+          value="2"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.php.debug.core/org.eclipse.php.debug.core.xdebugDebuggerSettingsProvider"
+          value="&lt;settings>&lt;proxyEnable>false&lt;/proxyEnable>&lt;clientPort>9000&lt;/clientPort>&lt;ownerId>php-server-c6caaded-7596-4cb7-9f94-2ca5c352f37a&lt;/ownerId>&lt;proxyIdeKey>ECLIPSE_DBGP_xxx&lt;/proxyIdeKey>&lt;proxyAddress>&lt;/proxyAddress>&lt;/settings>"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.php.debug.core/org.eclipse.php.debug.corestop_at_first_line_string"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.php.server.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.php.server.core/phpServers"
+          value="&lt;server>&lt;hostname>localhost&lt;/hostname>&lt;port>-1&lt;/port>&lt;debuggerId>org.eclipse.php.debug.core.xdebugDebugger&lt;/debuggerId>&lt;document_root>&lt;/document_root>&lt;name>Default PHP Web Server&lt;/name>&lt;base_url>http://localhost&lt;/base_url>&lt;id>php-server-c6caaded-7596-4cb7-9f94-2ca5c352f37a&lt;/id>&lt;/server>"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.browser">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.browser/browser-choice"
+          value="1"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.editors">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/changeIndicationInOverviewRuler"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/deletionIndicationInOverviewRuler"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/deletionIndicationInOverviewRuler"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/lineNumberRuler"
+          value="true"/>
+    </setupTask>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="User Preferences">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.core.resources"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.php.debug.core"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.php.server.core"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.browser"/>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.ui.editors"/>
   </setupTask>
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
-        name="org.eclipse.papyrus.sdk.feature.feature.group"/>
-    <requirement
-        name="org.eclipse.php.feature.group"/>
-    <requirement
-        name="org.eclipse.php.composer.feature.group"/>
-    <requirement
-        name="org.eclipse.php.importer.feature.group"/>
+        name="org.eclipse.oomph.setup.feature.group"/>
   </setupTask>
   <version name="neon-wcmf"
       label="Neon"
@@ -47,10 +122,18 @@
           name="org.eclipse.platform.feature.group"/>
       <requirement
           name="org.eclipse.rcp.feature.group"/>
+      <requirement
+          name="org.eclipse.php.feature.group"/>
+      <requirement
+          name="org.eclipse.php.composer.feature.group"/>
+      <requirement
+          name="org.eclipse.php.importer.feature.group"/>
+      <requirement
+          name="org.eclipse.papyrus.sdk.feature.feature.group"/>
       <repository
           url="http://download.eclipse.org/releases/neon"/>
     </setupTask>
-    <description></description>
+    <description>Eclipse IDE for wCMF Developers for Neon.</description>
   </version>
-  <description><![CDATA[An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.]]></description>
+  <description>An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.</description>
 </setup:Product>

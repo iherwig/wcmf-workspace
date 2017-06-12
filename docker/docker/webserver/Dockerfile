@@ -10,7 +10,8 @@ RUN docker-php-ext-configure \
     && docker-php-ext-install -j$(nproc) \
         gd \
         pdo \
-        pdo_mysql
+        pdo_mysql \
+        mysqli
 
 RUN pecl install xdebug-2.5.4 \
     && docker-php-ext-enable xdebug
