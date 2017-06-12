@@ -47,14 +47,18 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
 * **Docker setup**
   * In order to enable debugging support you need to get your local IP address (e.g. `ifconfig`)
   * Open `<base_dir>/wcmf-workspace/docker/.env` in an editor and enter the IP address
+  
     ```
     HOST_IP=<IP address>
     ```
-  * Start the docker containers:
+    
+  * Start the docker containers
+  
     ```
     cd <base_dir>/wcmf-workspace/docker
     docker-compose up -d
     ```
+    
   * Test if everything is working by opening `http://localhost/index.php` in a browser
   * **NOTES**
     * The web server root directory is mapped to `<base_dir>/wcmf-workspace/www`
