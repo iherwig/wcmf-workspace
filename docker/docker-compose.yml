@@ -4,6 +4,8 @@ services:
   webserver:
     build: 
       context: ./docker/webserver
+    environment:
+      XDEBUG_CONFIG: remote_host=${HOST_IP}
     ports:
       - "80:80"
     volumes:
