@@ -159,6 +159,8 @@
           name="org.eclipse.papyrus.sdk.feature.feature.group"/>
       <repository
           url="http://download.eclipse.org/releases/neon"/>
+      <repository
+          url="http://www.phpsrc.org/eclipse/pti/"/>
     </setupTask>
     <description>Eclipse IDE for wCMF Developers for Neon.</description>
   </version>
