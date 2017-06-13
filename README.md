@@ -61,6 +61,9 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
     
   * Test if everything is working by opening `http://localhost/index.php` in a browser
   * **NOTES**
-    * The web server root directory is mapped to `<base_dir>/wcmf-workspace/www`
-    * Connections to the MySQL server must use `mysql` as server name
-  
+    * The web server's document root directory is mapped to `<base_dir>/wcmf-workspace/www`
+    * The server logs are written to `<base_dir>/wcmf-workspace/log`
+    * MySQL database connection
+      * Servername: `mysql`
+      * Username: `root`
+      * Password: ``

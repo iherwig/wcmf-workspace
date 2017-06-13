@@ -85,25 +85,38 @@
           key="/instance/org.eclipse.ui.editors/lineNumberRuler"
           value="true"/>
     </setupTask>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="User Preferences">
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="org.eclipse.core.resources"/>
+        name="org.eclipse.papyrus.infra.gmfdiag.css">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.css/currentTheme"
+          value="org.eclipse.papyrus.css.blacknwhite_theme"/>
+    </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
-        name="org.eclipse.php.debug.core"/>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.php.server.core"/>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.ui.browser"/>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.ui.editors"/>
+        name="org.eclipse.papyrus.infra.gmfdiag.preferences">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.color.gradient"
+          value="RGB {255, 255, 255};RGB {255, 255, 255};0;0"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.font"
+          value="1|Segoe UI|9.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Segoe UI;"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.gridspacing"
+          value="15.0"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.snaptogrid"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.viewgrid"
+          value="true"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup.p2:P2Task">
@@ -129,11 +142,25 @@
       <requirement
           name="org.eclipse.php.importer.feature.group"/>
       <requirement
+          name="org.phpsrc.eclipse.pti.core.feature.group"/>
+      <requirement
+          name="org.phpsrc.eclipse.pti.library.pear.feature.group"/>
+      <requirement
+          name="org.phpsrc.eclipse.pti.tools.codesniffer.feature.group"/>
+      <requirement
+          name="org.phpsrc.eclipse.pti.tools.phpcpd.feature.group"/>
+      <requirement
+          name="org.phpsrc.eclipse.pti.tools.phpdepend.feature.group"/>
+      <requirement
+          name="org.phpsrc.eclipse.pti.tools.phpmd.feature.group"/>
+      <requirement
+          name="org.phpsrc.eclipse.pti.tools.phpunit.feature.group"/>
+      <requirement
           name="org.eclipse.papyrus.sdk.feature.feature.group"/>
       <repository
           url="http://download.eclipse.org/releases/neon"/>
     </setupTask>
     <description>Eclipse IDE for wCMF Developers for Neon.</description>
   </version>
-  <description>An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.</description>
+  <description>An IDE for developing wCMF projects including PHP Development Tools (PDT), PHP Tool Integration (PTI) and Papyrus Modeling environment.</description>
 </setup:Product>
