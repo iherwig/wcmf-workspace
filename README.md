@@ -66,4 +66,4 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
     * MySQL database connection
       * Servername: `mysql`
       * Username: `root`
-      * Password: ``
+      * Password: *empty*
