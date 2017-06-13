@@ -45,6 +45,7 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
   * For more information about using Eclipse with PHP visit the [PDT](https://eclipse.org/pdt/) website
   
 * **Docker setup**
+  * Download and install [Docker](https://www.docker.com/)
   * In order to enable debugging support you need to get your local IP address (e.g. `ifconfig`)
   * Open `<base_dir>/wcmf-workspace/docker/.env` in an editor and enter the IP address
   
