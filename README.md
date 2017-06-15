@@ -50,9 +50,11 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
   * Open `<base_dir>/wcmf-workspace/docker/.env` in an editor and enter the IP address
   
     ```
-    HOST_IP=<IP address>
+    docker_host_ip=<IP address>
     ```
-    
+
+  * Adjust paths, ports and additional configuration in `<base_dir>/wcmf-workspace/docker/.env` according 
+    to your environment.
   * Start the docker containers
   
     ```
@@ -61,10 +63,11 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
     ```
     
   * Test if everything is working by opening `http://localhost/index.php` in a browser
-  * **NOTES**
-    * The web server's document root directory is mapped to `<base_dir>/wcmf-workspace/www`
-    * The server logs are written to `<base_dir>/wcmf-workspace/log`
-    * MySQL database connection
-      * Servername: `mysql`
-      * Username: `root`
-      * Password: *empty*
+  
+* **NOTES**
+  * By default the web server's document root directory is mapped to `<base_dir>/wcmf-workspace/www`
+  * By default the server log files are written to `<base_dir>/wcmf-workspace/log`
+  * Connect to the MySQL server with the following parameters:
+    * Servername: `mysql`
+    * Username: `root`
+    * Password: *empty*
