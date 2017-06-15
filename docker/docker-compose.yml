@@ -5,20 +5,20 @@ services:
     build: 
       context: ./docker/webserver
     volumes:
-      - ${WWW_PATH}:/var/www/html
-      - ${LOG_PATH}:/var/log/apache2
+      - ${http_docroot}:/var/www/html
+      - ${http_logdir}:/var/log/apache2
     ports:
-      - "80:80"
+      - "${http_port}:80"
     restart: always
     environment:
-      XDEBUG_CONFIG: remote_host=${HOST_IP}
+      XDEBUG_CONFIG: remote_host=${docker_host_ip} remote_port=${php_xdebug_port} remote_enable=${php_xdebug_enabled}
 
   mysql:
     image: mysql:5.7
     volumes:
-      - ${DB_PATH}:/var/lib/mysql
+      - ${db_datadir}:/var/lib/mysql
     ports: 
-      - "3306:3306"
+      - "${db_port}:3306"
     restart: always
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
