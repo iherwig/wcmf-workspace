@@ -4,6 +4,8 @@ services:
   webserver:
     build: 
       context: ./docker/webserver
+      args:
+        XDEBUG_ENABLED: ${php_xdebug_enabled}
     volumes:
       - ${http_docroot}:/var/www/html
       - ${http_logdir}:/var/log/apache2
@@ -11,7 +13,7 @@ services:
       - "${http_port}:80"
     restart: always
     environment:
-      XDEBUG_CONFIG: remote_host=${docker_host_ip} remote_port=${php_xdebug_port} remote_enable=${php_xdebug_enabled}
+      XDEBUG_CONFIG: remote_host=${docker_host_ip} remote_port=${php_xdebug_port}
 
   mysql:
     image: mysql:5.7
