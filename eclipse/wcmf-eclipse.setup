@@ -39,7 +39,7 @@
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.php.debug.core/org.eclipse.php.debug.core.xdebug_remotesession"
-          value="0"/>
+          value="3"/>
       <setupTask
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.php.debug.core/org.eclipse.php.debug.core.xdebugDebuggerSettingsProvider"
