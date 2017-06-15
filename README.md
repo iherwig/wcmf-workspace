@@ -24,6 +24,7 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
         - webserver
           - config
             - php.ini
+            - xdebug.ini
           - Dockerfile
       - .env
       - docker-compose.yml
@@ -54,7 +55,7 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
     ```
 
   * Adjust paths, ports and additional configuration in `<base_dir>/wcmf-workspace/docker/.env` according 
-    to your environment.
+    to your environment
   * Start the docker containers
   
     ```
