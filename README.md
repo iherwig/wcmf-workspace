@@ -24,7 +24,6 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
         - webserver
           - config
             - php.ini
-            - xdebug.ini
           - Dockerfile
       - .env
       - docker-compose.yml
