@@ -1,8 +1,8 @@
 # wcmf-workspace
 
-A development environment for [wCMF](https://github.com/iherwig/wcmf) projects including:
+A development environment for [wCMF](https://github.com/iherwig/wcmf) projects consisting of:
 
-* Customized [Eclipse IDE](https://eclipse.org/ide/)
+* A customized [Eclipse IDE](https://eclipse.org/ide/) with PHP and modeling support
 * [Docker](https://www.docker.com/) containers to set up [Apache](https://httpd.apache.org/) HTTP Server, [MySQL](https://www.mysql.com/) Database Server and PHP
 
 # Installation
@@ -42,11 +42,12 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
   * Choose the product *Eclipse IDE for wCMF Developers* and press *Install*
   * Press *Launch* and select a workspace directory
   * **Close Eclipse once before using it** to make sure that all preferences are updated
-  * For more information about using Eclipse with PHP visit the [PDT](https://eclipse.org/pdt/) website
+  * For more information about using Eclipse with PHP visit the [PDT](https://eclipse.org/pdt/) website and 
+    to learn more about the modeling tools visit the [Eclipse Papyrus](https://eclipse.org/papyrus/) website
   
 * **Docker setup**
   * Download and install [Docker](https://www.docker.com/)
-  * In order to enable debugging support you need to get your local IP address (e.g. `ifconfig`)
+  * To enable debugging support you need to get your local IP address (e.g. `ifconfig`)
   * Open `<base_dir>/wcmf-workspace/docker/.env` in an editor and enter the IP address
   
     ```
@@ -54,7 +55,7 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
     ```
 
   * Adjust paths, ports and additional configuration in `<base_dir>/wcmf-workspace/docker/.env` according 
-    to your environment
+    to your environment (see [default values](https://github.com/iherwig/wcmf-workspace/blob/master/docker/.env))
   * Start the docker containers
   
     ```
@@ -62,12 +63,16 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects i
     docker-compose up -d
     ```
     
-  * Test if everything is working by opening `http://localhost/index.php` in a browser
+  * Test the installation by opening the URL 
   
-* **NOTES**
-  * By default the web server's document root directory is mapped to `<base_dir>/wcmf-workspace/www`
-  * By default the server log files are written to `<base_dir>/wcmf-workspace/log`
-  * Connect to the MySQL server with the following parameters:
-    * Servername: `mysql`
-    * Username: `root`
-    * Password: *empty*
+    ```
+    http://localhost/index.php
+    ```
+    
+    or 
+    
+    ```
+    http://localhost<http_port>/index.php
+    ```
+
+    if you changed the value of the `http_port` variable
