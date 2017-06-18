@@ -56,14 +56,14 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects c
 
   * Adjust paths, ports and additional configuration in `<base_dir>/wcmf-workspace/docker/.env` according 
     to your environment (see [default values](https://github.com/iherwig/wcmf-workspace/blob/master/docker/.env))
-  * Start the docker containers
+  * **Start the docker containers**
   
     ```
     cd <base_dir>/wcmf-workspace/docker
     docker-compose up -d
     ```
     
-  * Test the installation by opening the URL 
+  * **Test the installation** by opening the URL 
   
     ```
     http://localhost/index.php
@@ -76,3 +76,13 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects c
     ```
 
     if you changed the value of the `http_port` variable
+    
+## Notes
+
+  * When connecting to the **MySQL server** from inside the webserver's docker container (e.g. from a PHP script)
+    you have to use the **host name** `mysql`
+  * Use the following command to open a **shell** in the webserver's docker container:
+  
+    ```
+    docker exec -it docker_webserver_1 bash
+    ```
