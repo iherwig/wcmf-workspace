@@ -35,6 +35,66 @@
     </setupTask>
     <setupTask
         xsi:type="setup:CompoundTask"
+        name="org.eclipse.jdt.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/smart_tab"
+          value="false"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/sp_cleanup.on_save_use_additional_actions"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/sp_cleanup.organize_imports"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/sp_cleanup.remove_trailing_whitespaces"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/sp_cleanup.remove_trailing_whitespaces_all"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.jdt.ui/sp_cleanup.remove_trailing_whitespaces_ignore_empty"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.papyrus.infra.gmfdiag.css">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.css/currentTheme"
+          value="org.eclipse.papyrus.css.blacknwhite_theme"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.papyrus.infra.gmfdiag.preferences">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.color.gradient"
+          value="RGB {255, 255, 255};RGB {255, 255, 255};0;0"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.font"
+          value="1|Segoe UI|9.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Segoe UI;"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.gridspacing"
+          value="15.0"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.snaptogrid"
+          value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.viewgrid"
+          value="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
         name="org.eclipse.php.debug.core">
       <setupTask
           xsi:type="setup:PreferenceTask"
@@ -84,38 +144,82 @@
           xsi:type="setup:PreferenceTask"
           key="/instance/org.eclipse.ui.editors/lineNumberRuler"
           value="true"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.papyrus.infra.gmfdiag.css">
       <setupTask
           xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.papyrus.infra.gmfdiag.css/currentTheme"
-          value="org.eclipse.papyrus.css.blacknwhite_theme"/>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:CompoundTask"
-        name="org.eclipse.papyrus.infra.gmfdiag.preferences">
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.color.gradient"
-          value="RGB {255, 255, 255};RGB {255, 255, 255};0;0"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.font"
-          value="1|Segoe UI|9.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Segoe UI;"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.gridspacing"
-          value="15.0"/>
-      <setupTask
-          xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.snaptogrid"
+          key="/instance/org.eclipse.ui.editors/showWhitespaceCharacters"
           value="true"/>
       <setupTask
           xsi:type="setup:PreferenceTask"
-          key="/instance/org.eclipse.papyrus.infra.gmfdiag.preferences/PAPYRUS_EDITOR.rulergrid.viewgrid"
+          key="/instance/org.eclipse.ui.editors/spacesForTabs"
           value="true"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.ui.editors/tabWidth"
+          value="2"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.css.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.css.core/indentationChar"
+          value="space"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.css.core/indentationSize"
+          value="2"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.html.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.html.core/indentationChar"
+          value="space"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.html.core/indentationSize"
+          value="2"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.jsdt.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.jsdt.core/org.eclipse.wst.jsdt.core.formatter.indentation.size"
+          value="2"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.jsdt.core/org.eclipse.wst.jsdt.core.formatter.tabulation.char"
+          value="space"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.jsdt.core/org.eclipse.wst.jsdt.core.formatter.tabulation.size"
+          value="2"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.jsdt.core/org.eclipse.wst.jsdt.core.formatter.use_tabs_only_for_leading_indentations"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.jsdt.ui">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.jsdt.ui/smart_tab"
+          value="false"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.xml.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.xml.core/indentationChar"
+          value="space"/>
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.xml.core/indentationSize"
+          value="2"/>
     </setupTask>
   </setupTask>
   <setupTask
