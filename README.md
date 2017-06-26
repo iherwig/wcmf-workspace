@@ -72,7 +72,7 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects c
     or 
     
     ```
-    http://localhost<http_port>/index.php
+    http://localhost:<http_port>/index.php
     ```
 
     if you changed the value of the `http_port` variable
