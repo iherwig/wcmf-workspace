@@ -18,6 +18,7 @@ services:
   mysql:
     image: mysql:5.7
     volumes:
+      - ./docker/mysql/conf:/etc/mysql/conf.d
       - ${mysql_datadir}:/var/lib/mysql
     ports: 
       - "${mysql_port}:3306"
