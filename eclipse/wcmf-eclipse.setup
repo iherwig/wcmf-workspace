@@ -227,8 +227,8 @@
     <requirement
         name="org.eclipse.oomph.setup.feature.group"/>
   </setupTask>
-  <version name="neon-wcmf"
-      label="Neon"
+  <version name="oxygen-wcmf"
+      label="Oxygen"
       requiredJavaVersion="1.8">
     <setupTask
         xsi:type="setup.p2:P2Task"
@@ -242,33 +242,13 @@
       <requirement
           name="org.eclipse.php.feature.group"/>
       <requirement
-          name="org.eclipse.php.composer.feature.group"/>
-      <requirement
-          name="org.eclipse.php.importer.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.core.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.library.pear.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.tools.codesniffer.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.tools.phpcpd.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.tools.phpdepend.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.tools.phpmd.feature.group"/>
-      <requirement
-          name="org.phpsrc.eclipse.pti.tools.phpunit.feature.group"/>
-      <requirement
           name="org.eclipse.papyrus.sdk.feature.feature.group"/>
       <requirement
           name="org.eclipse.linuxtools.docker.feature.feature.group"/>
       <repository
-          url="http://download.eclipse.org/releases/neon"/>
-      <repository
-          url="http://www.phpsrc.org/eclipse/pti/"/>
+          url="http://download.eclipse.org/releases/oxygen"/>
     </setupTask>
-    <description>Eclipse IDE for wCMF Developers for Neon.</description>
+    <description>Eclipse Oxygen IDE for wCMF Developers.</description>
   </version>
-  <description>An IDE for developing wCMF projects including PHP Development Tools (PDT), PHP Tool Integration (PTI) and Papyrus Modeling environment.</description>
+  <description>An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.</description>
 </setup:Product>
