@@ -21,6 +21,20 @@ RUN docker-php-ext-configure \
 RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug-2.5.4 \
     && docker-php-ext-enable xdebug \
     ; fi
+    
+RUN curl -fsSL 'https://github.com/BitOne/php-meminfo/archive/master.tar.gz' -o meminfo.tar.gz \
+	&& mkdir -p meminfo \
+	&& tar -xf meminfo.tar.gz -C meminfo --strip-components=1 \
+	&& rm meminfo.tar.gz \
+	&& ( \
+		cd meminfo/extension/php7 \
+		&& phpize \
+		&& ./configure --enable-meminfo \
+		&& make -j$(nproc) \
+		&& make install \
+	) \
+	&& rm -r meminfo \
+	&& docker-php-ext-enable meminfo
 
 COPY config/php.ini /usr/local/etc/php/
 
