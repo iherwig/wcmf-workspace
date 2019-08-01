@@ -4,7 +4,7 @@ ARG XDEBUG_ENABLED=0
 RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
-    libpng12-dev \
+    libpng-dev \
     libicu-dev
 
 RUN docker-php-ext-configure \
