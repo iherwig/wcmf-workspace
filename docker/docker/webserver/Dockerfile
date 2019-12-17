@@ -1,4 +1,4 @@
-FROM php:7.1-apache
+FROM php:7.2-apache
 ARG XDEBUG_ENABLED=0
 
 RUN apt-get update -y && apt-get install -y \
@@ -18,11 +18,11 @@ RUN docker-php-ext-configure \
         exif \
         opcache
 
-RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug-2.6.1 \
+RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug-2.9.0 \
     && docker-php-ext-enable xdebug \
     ; fi
     
-RUN curl -fsSL 'https://github.com/BitOne/php-meminfo/archive/master.tar.gz' -o meminfo.tar.gz \
+RUN if [ "$MEMINFO_ENABLED" = "1" ]; then curl -fsSL 'https://github.com/BitOne/php-meminfo/archive/master.tar.gz' -o meminfo.tar.gz \
 	&& mkdir -p meminfo \
 	&& tar -xf meminfo.tar.gz -C meminfo --strip-components=1 \
 	&& rm meminfo.tar.gz \
@@ -34,7 +34,8 @@ RUN curl -fsSL 'https://github.com/BitOne/php-meminfo/archive/master.tar.gz' -o 
 		&& make install \
 	) \
 	&& rm -r meminfo \
-	&& docker-php-ext-enable meminfo
+	&& docker-php-ext-enable meminfo \
+  ; fi
 
 COPY config/php.ini /usr/local/etc/php/
 

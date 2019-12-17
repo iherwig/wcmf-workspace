@@ -1,4 +1,4 @@
-version: '2'
+version: '3.3'
 
 services:
   webserver:
@@ -6,6 +6,7 @@ services:
       context: ./docker/webserver
       args:
         XDEBUG_ENABLED: ${php_xdebug_enabled}
+        MEMINFO_ENABLED: ${php_meminfo_enabled}
     volumes:
       - ${http_docroot}:/var/www/html
       - ${http_logdir}:/var/log/apache2
