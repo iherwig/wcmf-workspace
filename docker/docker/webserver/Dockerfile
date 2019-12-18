@@ -1,5 +1,6 @@
 FROM php:7.2-apache
 ARG XDEBUG_ENABLED=0
+ARG MEMINFO_ENABLED=0
 
 RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
