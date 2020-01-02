@@ -227,8 +227,8 @@
     <requirement
         name="org.eclipse.oomph.setup.feature.group"/>
   </setupTask>
-  <version name="oxygen-wcmf"
-      label="Oxygen"
+  <version name="2019-12-wcmf"
+      label="2019-12"
       requiredJavaVersion="1.8">
     <setupTask
         xsi:type="setup.p2:P2Task"
@@ -246,9 +246,9 @@
       <requirement
           name="org.eclipse.linuxtools.docker.feature.feature.group"/>
       <repository
-          url="http://download.eclipse.org/releases/oxygen"/>
+          url="http://download.eclipse.org/releases/2019-12"/>
     </setupTask>
-    <description>Eclipse Oxygen IDE for wCMF Developers.</description>
+    <description>Eclipse 2019-12 IDE for wCMF Developers.</description>
   </version>
   <description>An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.</description>
 </setup:Product>
