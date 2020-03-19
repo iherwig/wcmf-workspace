@@ -1,4 +1,4 @@
-FROM php:7.2-apache
+FROM php:7.4-apache
 ARG XDEBUG_ENABLED=0
 ARG MEMINFO_ENABLED=0
 
@@ -9,7 +9,7 @@ RUN apt-get update -y && apt-get install -y \
     libicu-dev
 
 RUN docker-php-ext-configure \
-    gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j$(nproc) \
         gd \
         pdo \
