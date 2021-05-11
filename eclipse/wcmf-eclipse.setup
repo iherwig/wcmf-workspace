@@ -227,9 +227,9 @@
     <requirement
         name="org.eclipse.oomph.setup.feature.group"/>
   </setupTask>
-  <version name="2020-03-wcmf"
-      label="2020-03"
-      requiredJavaVersion="1.8">
+  <version name="2020-12-wcmf"
+      label="2020-12"
+      requiredJavaVersion="1.11">
     <setupTask
         xsi:type="setup.p2:P2Task"
         label="${scope.product.label} (${scope.product.version.label})">
@@ -246,9 +246,9 @@
       <requirement
           name="org.eclipse.linuxtools.docker.feature.feature.group"/>
       <repository
-          url="http://download.eclipse.org/releases/2020-03"/>
+          url="http://download.eclipse.org/releases/2020-12"/>
     </setupTask>
-    <description>Eclipse 2020-03 IDE for wCMF Developers.</description>
+    <description>Eclipse 2020-12 IDE for wCMF Developers.</description>
   </version>
   <description>An IDE for developing wCMF projects including PHP Development Tools (PDT) and Papyrus Modeling environment.</description>
 </setup:Product>

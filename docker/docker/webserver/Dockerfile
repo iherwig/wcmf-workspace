@@ -19,7 +19,7 @@ RUN docker-php-ext-configure \
         exif \
         opcache
 
-RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug-2.9.0 \
+RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug \
     && docker-php-ext-enable xdebug \
     ; fi
     
