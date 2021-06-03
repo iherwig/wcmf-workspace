@@ -14,7 +14,8 @@ services:
       - "${http_port}:80"
     restart: always
     environment:
-      XDEBUG_CONFIG: remote_host=host.docker.internal remote_port=${php_xdebug_port}
+      XDEBUG_CONFIG: client_host=host.docker.internal client_port=${php_xdebug_port}
+      XDEBUG_MODE: ${php_xdebug_mode}
 
   mysql:
     image: mysql:5.7
