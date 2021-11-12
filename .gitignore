@@ -1,4 +1,6 @@
 /docker/db
 /www
+!/www/.devcontainer
+!/www/.vscode
 !/www/index.php
 /log

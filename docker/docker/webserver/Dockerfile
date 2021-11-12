@@ -40,5 +40,7 @@ RUN if [ "$MEMINFO_ENABLED" = "1" ]; then curl -fsSL 'https://github.com/BitOne/
 
 COPY config/php.ini /usr/local/etc/php/
 
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
 RUN a2enmod rewrite
 RUN service apache2 restart

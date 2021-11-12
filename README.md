@@ -21,6 +21,9 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects c
   - wcmf-workspace
     - docker
       - docker
+        - mysql
+          - conf
+            - my.cnf
         - webserver
           - config
             - php.ini
@@ -30,6 +33,10 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects c
     - eclipse
       - wcmf-eclipse.setup
     - www
+      - .devcontainer
+        - devcontainer.json
+      - .vscode
+        - launch.json
       - index.php
   ```
   
@@ -47,13 +54,6 @@ A development environment for [wCMF](https://github.com/iherwig/wcmf) projects c
   
 * **Docker setup**
   * Download and install [Docker](https://www.docker.com/)
-  * To enable debugging support you need to get your local IP address (e.g. `ifconfig`)
-  * Open `<base_dir>/wcmf-workspace/docker/.env` in an editor and enter the IP address
-  
-    ```
-    docker_host_ip=<IP address>
-    ```
-
   * Adjust paths, ports and additional configuration in `<base_dir>/wcmf-workspace/docker/.env` according 
     to your environment (see [default values](https://github.com/iherwig/wcmf-workspace/blob/master/docker/.env))
   * **Start the docker containers**
