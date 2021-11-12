@@ -30,7 +30,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${mysql_root_pw}
 
   adminer:
-    container_name: adminer
     image: adminer
     restart: unless-stopped
     ports:
