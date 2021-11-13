@@ -7,6 +7,7 @@ services:
       args:
         XDEBUG_ENABLED: ${php_xdebug_enabled}
         MEMINFO_ENABLED: ${php_meminfo_enabled}
+        USER_UID: ${uid}
     volumes:
       - ${http_docroot}:/var/www/html
       - ${http_logdir}:/var/log/apache2

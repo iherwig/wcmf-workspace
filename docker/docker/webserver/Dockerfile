@@ -1,12 +1,17 @@
 FROM php:7.4-apache
 ARG XDEBUG_ENABLED=0
 ARG MEMINFO_ENABLED=0
+ARG USER_UID=1000
+
+RUN usermod -u $USER_UID www-data
 
 RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
-    libicu-dev
+    libicu-dev \
+    subversion \
+    git
 
 RUN docker-php-ext-configure \
     gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
