@@ -10,7 +10,6 @@ services:
         USER_UID: ${uid}
     volumes:
       - ${http_docroot}:/var/www/html
-      - ${http_logdir}:/var/log/apache2
     ports:
       - "${http_port}:80"
     restart: unless-stopped
