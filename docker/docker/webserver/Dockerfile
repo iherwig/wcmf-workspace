@@ -1,9 +1,23 @@
 FROM php:7.4-apache
 ARG XDEBUG_ENABLED=0
 ARG MEMINFO_ENABLED=0
+ARG USERNAME=app-user
 ARG USER_UID=1000
+ARG USER_GID=$USER_UID
 
-RUN usermod -u $USER_UID www-data
+# Create the non-root user
+# See https://code.visualstudio.com/remote/advancedcontainers/add-nonroot-user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    #
+    # [Optional] Add sudo support. Omit if you don't need to install software after connecting.
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
+
+# Add www-data to non-root user's group
+RUN usermod --gid $USER_GID www-data
 
 RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
@@ -49,3 +63,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN a2enmod rewrite
 RUN service apache2 restart
+
+# Run as non-root user
+USER $USERNAME
+ENV HOME /home/$USERNAME

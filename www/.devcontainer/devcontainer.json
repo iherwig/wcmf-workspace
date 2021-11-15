@@ -15,7 +15,7 @@
     "service": "webserver",
 
     // Override the user that VS Code runs as in the container
-    "remoteUser": "www-data",
+    "remoteUser": "app-user",
 
     // The optional 'workspaceFolder' property is the path VS Code should open by default when
     // connected. This is typically a file mount in .devcontainer/docker-compose.yml
