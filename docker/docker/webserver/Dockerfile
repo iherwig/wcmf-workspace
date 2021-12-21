@@ -25,7 +25,8 @@ RUN apt-get update -y && apt-get install -y \
     libpng-dev \
     libicu-dev \
     subversion \
-    git
+    git \
+    ant
 
 RUN docker-php-ext-configure \
     gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
@@ -41,7 +42,7 @@ RUN docker-php-ext-configure \
 RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug \
     && docker-php-ext-enable xdebug \
     ; fi
-    
+
 RUN if [ "$MEMINFO_ENABLED" = "1" ]; then curl -fsSL 'https://github.com/BitOne/php-meminfo/archive/master.tar.gz' -o meminfo.tar.gz \
 	&& mkdir -p meminfo \
 	&& tar -xf meminfo.tar.gz -C meminfo --strip-components=1 \
