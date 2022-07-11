@@ -19,6 +19,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # Add www-data to non-root user's group
 RUN usermod --gid $USER_GID www-data
 
+RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
 RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
@@ -26,7 +27,8 @@ RUN apt-get update -y && apt-get install -y \
     libicu-dev \
     subversion \
     git \
-    ant
+    ant \
+    nodejs
 
 RUN docker-php-ext-configure \
     gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
