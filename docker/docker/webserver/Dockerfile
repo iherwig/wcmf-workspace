@@ -1,4 +1,4 @@
-FROM php:7.4-apache
+FROM php:8.1-apache
 ARG XDEBUG_ENABLED=0
 ARG MEMINFO_ENABLED=0
 ARG USERNAME=app-user
@@ -25,6 +25,8 @@ RUN apt-get update -y && apt-get install -y \
     libjpeg62-turbo-dev \
     libpng-dev \
     libicu-dev \
+    libzip-dev \
+    zip \
     subversion \
     git \
     ant \
@@ -39,6 +41,7 @@ RUN docker-php-ext-configure \
         mysqli \
         intl \
         exif \
+        zip \
         opcache
 
 RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug \

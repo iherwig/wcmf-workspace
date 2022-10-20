@@ -10,6 +10,7 @@ services:
         USER_UID: ${uid}
     volumes:
       - ${http_docroot}:/var/www/html
+      - ./apache-logs:/var/log/apache2
     ports:
       - "${http_port}:80"
     restart: unless-stopped
@@ -18,7 +19,7 @@ services:
       XDEBUG_MODE: ${php_xdebug_mode}
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8.0
     volumes:
       - ./docker/mysql/conf:/etc/mysql/conf.d
       - ${mysql_datadir}:/var/lib/mysql
