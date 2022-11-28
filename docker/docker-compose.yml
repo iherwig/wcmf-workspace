@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   webserver:
-    build: 
+    build:
       context: ./docker/webserver
       args:
         XDEBUG_ENABLED: ${php_xdebug_enabled}
@@ -10,7 +10,6 @@ services:
         USER_UID: ${uid}
     volumes:
       - ${http_docroot}:/var/www/html
-      - ./apache-logs:/var/log/apache2
     ports:
       - "${http_port}:80"
     restart: unless-stopped
@@ -23,7 +22,7 @@ services:
     volumes:
       - ./docker/mysql/conf:/etc/mysql/conf.d
       - ${mysql_datadir}:/var/lib/mysql
-    ports: 
+    ports:
       - "${mysql_port}:3306"
     restart: unless-stopped
     environment:
@@ -40,4 +39,4 @@ services:
 
 volumes:
   mysql:
-  
+
