@@ -28,7 +28,10 @@
         "felixfbecker.php-debug",
         "bmewburn.vscode-intelephense-client",
         "johnstoncode.svn-scm",
-        "donjayamanne.git-extension-pack"
+        "donjayamanne.git-extension-pack",
+        "moshfeu.compare-folders",
+        "alefragnani.project-manager",
+        "slevesque.vscode-zipexplorer"
     ],
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
