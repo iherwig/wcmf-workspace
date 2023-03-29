@@ -68,7 +68,6 @@ COPY config/php.ini /usr/local/etc/php/
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN a2enmod rewrite
-RUN service apache2 restart
 
 # Run as non-root user
 USER $USERNAME
