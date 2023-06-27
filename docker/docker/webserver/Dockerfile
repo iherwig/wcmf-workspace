@@ -30,7 +30,8 @@ RUN apt-get update -y && apt-get install -y \
     subversion \
     git \
     ant \
-    nodejs
+    nodejs \
+    npm
 
 RUN docker-php-ext-configure \
     gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
