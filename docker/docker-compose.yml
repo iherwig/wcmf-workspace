@@ -16,6 +16,8 @@ services:
     environment:
       XDEBUG_CONFIG: client_host=host.docker.internal client_port=${php_xdebug_port}
       XDEBUG_MODE: ${php_xdebug_mode}
+    networks:
+      - default
 
   mysql:
     image: mysql:8.0
@@ -40,3 +42,6 @@ services:
 volumes:
   mysql:
 
+networks:
+  default:
+    driver: bridge
