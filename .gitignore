@@ -1,5 +1,6 @@
 /docker/db
 /www
+!/www/.env
 !/www/.devcontainer
 !/www/.vscode
 !/www/index.php
