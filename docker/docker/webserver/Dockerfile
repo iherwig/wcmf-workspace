@@ -19,7 +19,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # Add www-data to non-root user's group
 RUN usermod --gid $USER_GID www-data
 
-RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
+#RUN curl -sL https://deb.nodesource.com/setup_16.x | sudo bash -
 RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
@@ -68,7 +68,10 @@ COPY config/php.ini /usr/local/etc/php/
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
+COPY config/vhosts.conf /etc/apache2/sites-available/vhosts.conf
+
 RUN a2enmod rewrite
+RUN a2ensite vhosts.conf
 
 # Run as non-root user
 USER $USERNAME
