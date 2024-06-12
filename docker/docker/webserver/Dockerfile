@@ -24,6 +24,8 @@ RUN apt-get update -y && apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
     libpng-dev \
+    libwebp-dev \
+    libavif-dev \
     libicu-dev \
     libzip-dev \
     zip \
@@ -34,7 +36,7 @@ RUN apt-get update -y && apt-get install -y \
     npm
 
 RUN docker-php-ext-configure \
-    gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
+    gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ --with-webp=/usr/include/ --with-avif=/usr/include/ \
     && docker-php-ext-install -j$(nproc) \
         gd \
         pdo \
