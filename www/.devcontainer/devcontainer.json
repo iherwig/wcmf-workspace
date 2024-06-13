@@ -25,7 +25,9 @@
     // This is the VS Code PHP Debug extension.
     // It needs to be installed in the container for us to have access to it.
     "extensions": [
-        "felixfbecker.php-debug",
+        "xdebug.php-debug",
+        "devsense.phptools-vscode",
+        "devsense.profiler-php-vscode",
         "bmewburn.vscode-intelephense-client",
         "johnstoncode.svn-scm",
         "donjayamanne.git-extension-pack",
