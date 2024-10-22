@@ -1,4 +1,4 @@
-FROM php:8.2-apache
+FROM php:8.3-apache
 ARG XDEBUG_ENABLED=0
 ARG MEMINFO_ENABLED=0
 ARG USERNAME=app-user
