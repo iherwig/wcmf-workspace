@@ -30,7 +30,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${mysql_root_pw}
 
   adminer:
-    image: adminer
+    image: ghcr.io/shyim/adminerevo:latest
     restart: unless-stopped
     ports:
       - "${adminer_port}:8080"
