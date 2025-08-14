@@ -1,4 +1,4 @@
-FROM php:8.3-apache
+FROM php:8.4-apache
 ARG XDEBUG_ENABLED=0
 ARG MEMINFO_ENABLED=0
 ARG USERNAME=app-user
@@ -28,18 +28,15 @@ RUN apt-get update -y && apt-get install -y \
     libavif-dev \
     libicu-dev \
     libzip-dev \
-    libssl-dev \
-    libc-client-dev \
-    libkrb5-dev \
     zip \
     subversion \
     git \
     ant \
     nodejs \
-    npm
+    npm \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ --with-webp=/usr/include/ --with-avif=/usr/include/ \
-    && docker-php-ext-configure imap --with-kerberos --with-imap-ssl \
     && docker-php-ext-install -j$(nproc) \
         gd \
         pdo \
@@ -48,7 +45,6 @@ RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/i
         intl \
         exif \
         zip \
-        imap \
         opcache
 
 RUN if [ "$XDEBUG_ENABLED" = "1" ]; then pecl install xdebug \
