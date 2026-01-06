@@ -76,6 +76,9 @@ RUN a2enmod rewrite
 RUN a2enmod headers
 RUN a2ensite vhosts.conf
 
+RUN mkdir -p /tmp/xdebug \
+    && chown -R $USERNAME:$USERNAME /tmp/xdebug
+
 # Run as non-root user
 USER $USERNAME
 ENV HOME /home/$USERNAME

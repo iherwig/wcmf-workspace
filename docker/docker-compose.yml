@@ -8,6 +8,7 @@ services:
         USER_UID: ${uid}
     volumes:
       - ${http_docroot}:/var/www/html
+      - ./xdebug:/tmp/xdebug
     ports:
       - "${http_port}:80"
     restart: unless-stopped
