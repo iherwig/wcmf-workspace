@@ -74,6 +74,7 @@ COPY config/vhosts.conf /etc/apache2/sites-available/vhosts.conf
 
 RUN a2enmod rewrite
 RUN a2enmod headers
+RUN a2enmod ssl
 RUN a2ensite vhosts.conf
 
 RUN mkdir -p /tmp/xdebug \

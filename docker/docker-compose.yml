@@ -11,6 +11,7 @@ services:
       - ./xdebug:/tmp/xdebug
     ports:
       - "${http_port}:80"
+      - "${https_port}:443"      
     restart: unless-stopped
     environment:
       XDEBUG_CONFIG: client_host=host.docker.internal client_port=${php_xdebug_port}
